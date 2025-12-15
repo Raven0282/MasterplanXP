@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("MasterplanXP")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("13.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("13.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("13.0.0+71a9637e6d47deb9229cd47cd7fa620e19f76c33")]
 [assembly: System.Reflection.AssemblyProductAttribute("MasterplanXP")]
 [assembly: System.Reflection.AssemblyTitleAttribute("MasterplanXP")]
 [assembly: System.Reflection.AssemblyVersionAttribute("13.0.0.0")]

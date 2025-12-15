@@ -51,6 +51,24 @@ namespace MasterplanXP.ViewModels
         /// <summary>
         /// Command executed when the user clicks a menu item to open the map (non-modal).
         /// </summary>
+        /// 
+
+        // ----------------------------------------------------------------------------------
+        // NEW: COMMAND TO OPEN CREATURE EDITOR (NON-MODAL)
+        // ----------------------------------------------------------------------------------
+        /// <summary>
+        /// Command executed when the user clicks a menu item to open the Creature Editor (non-modal).
+        /// </summary>
+        [RelayCommand]
+        private async Task OpenCreatureEditorWindow()
+        {
+            // Resolve the ViewModel using the IServiceProvider
+            var creatureEditorVM = _serviceProvider.GetRequiredService<CreatureEditorViewModel>();
+
+            // Open it using the non-modal window service
+            await _windowService.ShowWindowAsync(creatureEditorVM);
+        }
+
         [RelayCommand]
         private async Task OpenMapWindow()
         {

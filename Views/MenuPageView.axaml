@@ -53,7 +53,7 @@
                 <MenuItem Header="Player Characters"/>
                 <MenuItem Header="Treasure Parcels"/>
                 <MenuItem Header="Encounter Decks"/>
-                <MenuItem Header="Custom Creatures and NPCs"/>
+                <MenuItem Header="Custom Creatures and NPCs" Command="{Binding OpenCreatureEditorWindowCommand}" />
                 <MenuItem Header="Calendars"/>
                 <MenuItem Header="Treasure Parcels"/>
                 <MenuItem Header="Paused Encounters"/>

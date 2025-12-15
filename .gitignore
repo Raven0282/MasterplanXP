@@ -1,0 +1,11 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/.vs/MasterplanXP
+/.vs/ProjectEvaluation/masterplanxp.metadata.v9.bin
+/.vs/ProjectEvaluation/masterplanxp.projects.v9.bin
+/.vs/ProjectEvaluation/masterplanxp.strings.v9.bin
+/.vs/slnx.sqlite
+/.vs/VSWorkspaceState.json
+/bin/Debug/net8.0

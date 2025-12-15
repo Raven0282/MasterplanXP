@@ -65,6 +65,8 @@ namespace MasterplanXP
             services.AddSingleton<CreaturePageViewModel>();
             services.AddTransient<MapWindowViewModel>();
             services.AddTransient<GenericHostWindowViewModel>();
+            // ADDED: Register the CreatureEditorViewModel
+            services.AddSingleton<CreatureEditorViewModel>();
 
 
             // Sample page for testing
