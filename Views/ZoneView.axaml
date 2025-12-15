@@ -1,0 +1,34 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:vm="using:MasterplanXP.ViewModels"
+             xmlns:c="using:MasterplanXP.Converters"
+             x:Class="MasterplanXP.Views.ZoneView"
+             x:DataType="vm:ZoneViewModel"
+             
+             Canvas.Left="{Binding ScreenX}"
+             Canvas.Top="{Binding ScreenY}">
+
+    <UserControl.Resources>
+        <c:ColorHexToBrushConverter x:Key="ColorHexToBrushConverter" />
+    </UserControl.Resources>
+
+    <Border Width="{Binding ScreenWidth}"
+            Height="{Binding ScreenHeight}"
+            Background="Transparent"
+            CornerRadius="0"> 
+            
+        <Border x:Name="ShapeBorder"
+                Background="{Binding ColorHex, Converter={StaticResource ColorHexToBrushConverter}}" 
+                Opacity="{Binding Opacity}"
+                BorderBrush="{Binding ColorHex, Converter={StaticResource ColorHexToBrushConverter}}"
+                BorderThickness="2">
+            
+            <ToolTip.Tip>
+                <StackPanel>
+                    <TextBlock Text="{Binding Name}" FontWeight="Bold"/>
+                    <TextBlock Text="{Binding Details}" TextWrapping="Wrap" MaxWidth="200"/>
+                </StackPanel>
+            </ToolTip.Tip>
+        </Border>
+    </Border>
+</UserControl>

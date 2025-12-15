@@ -1,0 +1,102 @@
+<Styles xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <Design.PreviewWith>
+    <Border Padding="20" Background="{DynamicResource ResourceKey=PrimaryBackgroundGradient}" Width="200">
+      <!-- Add Controls for Previewer Here -->
+		<StackPanel Width="150">
+			<Menu>
+				<MenuItem Header="File">
+					<MenuItem Header="_Options"/>
+					</MenuItem>
+			</Menu>
+
+			<Button>
+					<Label Content="Creatures"></Label>			
+			</Button>
+			<Button HorizontalAlignment="Stretch">
+				<Label Content="Creatures"></Label>
+			</Button>
+
+			<Button HorizontalAlignment="Stretch">
+				<StackPanel Orientation="Horizontal">
+					<Label Classes="icon" Content="&#xe9a2;"></Label>
+					<Label Content="Creatures"></Label>
+				</StackPanel>
+			</Button>
+			<Button>
+				<Label Classes="icon" Content="&#xe9a2;"></Label>
+			</Button>
+			<Button Classes="transparent">
+				<Label Classes="iconOnly" Content="&#xe9a2;"></Label>
+			</Button>
+			
+		</StackPanel>
+
+	</Border>
+  </Design.PreviewWith>
+
+  <!-- Add Styles Here -->
+	<Style Selector="Window">
+		<Setter Property="FontFamily" Value="{DynamicResource ResourceKey=Noto Sans JP}"></Setter>		
+	</Style>
+	<Style Selector="Label.icon">
+		<Setter Property="FontFamily" Value="{DynamicResource ResourceKey=RpgAwe}"></Setter>
+	</Style>
+	<Style Selector="Label.iconOnly">
+		<Setter Property="FontFamily" Value="{DynamicResource ResourceKey=RpgAwe}"></Setter>
+	</Style>
+	
+	<Style Selector=":is(Button)">
+		<Setter Property="FontSize" Value="20"></Setter>
+		<Setter Property="Foreground" Value="{DynamicResource ResourceKey=PrimaryForeground}"></Setter>
+		<Setter Property="Background" Value="{DynamicResource ResourceKey=PrimaryBackground}"></Setter>
+	</Style>
+
+	<Style Selector=":is(Button) /template/ ContentPresenter">
+		<Setter Property="RenderTransform" Value="scale(1)"></Setter>
+		<Setter Property="Transitions">
+			<Transitions>
+				<BrushTransition Property="Foreground" Duration="0:0:0.1" ></BrushTransition>
+				<BrushTransition Property="Background" Duration="0:0:0.1" ></BrushTransition>
+				<TransformOperationsTransition Property="RenderTransform" Duration="0:0:0.1"></TransformOperationsTransition>
+			</Transitions>
+		</Setter>
+	</Style>
+
+	<Style Selector=":is(Button).transparent:pointerover /template/ ContentPresenter">
+		<Setter Property="RenderTransform" Value="scale(1.2)"></Setter>
+	</Style>
+
+	<Style Selector=":is(Button):pointerover /template/ ContentPresenter">
+		<Setter Property="Foreground" Value="{DynamicResource ResourceKey=PrimaryHoverForeground}"></Setter>
+		<Setter Property="Background" Value="{DynamicResource ResourceKey=PrimaryHoverBackground}"></Setter>
+
+	</Style>
+
+	<Style Selector=":is(Button).transparent">
+		<Setter Property="Background" Value="Transparent"></Setter>
+	</Style>
+
+	<Style Selector=":is(Button).transparent:pointerover /template/ ContentPresenter">
+		<Setter Property="Background" Value="Transparent"></Setter>
+	</Style>
+
+	<Style Selector="Menu">
+		<Setter Property="Background" Value="Transparent"></Setter>
+		<Setter Property="Foreground" Value="{DynamicResource ResourceKey=PrimaryHoverForeground}"></Setter>
+	</Style>
+	
+	<Style Selector="MenuItem">
+		<Setter Property="Background" Value="Transparent"></Setter>
+		<Setter Property="Foreground" Value="GoldenRod"></Setter>
+		<Setter Property="FontWeight" Value="DemiBold"></Setter>		
+	</Style>
+	
+	<Style Selector="MenuItem.MainMenuHeader">
+		<Setter Property="Foreground" Value="{DynamicResource MainMenuHeaderForeColor}"/>
+		<Style Selector="^:pointerover /template/ ContentPresenter#PART_HeaderPresenter">
+			<Setter Property="Foreground" Value="{DynamicResource MainMenuHeaderHoverForeColor}"/>
+		</Style>
+	</Style>
+
+</Styles>

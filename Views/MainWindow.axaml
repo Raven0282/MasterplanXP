@@ -1,0 +1,132 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:vm="using:MasterplanXP.ViewModels"
+		xmlns:view="using:MasterplanXP.Views"		
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+		mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="600"
+		Width="900" Height="600"
+		MinWidth="800" MinHeight="600"
+        x:Class="MasterplanXP.Views.MainWindow"
+		WindowStartupLocation="CenterScreen"
+
+        x:DataType="vm:MainWindowViewModel"
+        Icon="/Assets/Images/logo3-small-icon.ico"
+        Title="Masterplan XP">
+       
+	
+	<!-- This only sets the DataContext for the previewer in an IDE, to set the actual DataContext
+              for runtime, set the DataContext property in code (look at App.axaml.cs) -->
+    <Design.DataContext><vm:MainWindowViewModel/></Design.DataContext>
+	
+	<Grid Background="{DynamicResource ResourceKey=PrimaryBackground}" ColumnDefinitions="Auto,*">
+
+		<ContentControl Grid.Column="1" Content="{Binding CurrentPage}"></ContentControl>
+		
+		<Border Grid.Column="0" Padding="10" Background="{DynamicResource ResourceKey=PrimaryBackgroundGradient}">
+			<Grid RowDefinitions="*,Auto">
+				<StackPanel Grid.Row="0" Spacing="1" >
+
+					<!-- Need to get the image pointover working -->					
+					<Image Source="{SvgImage /Assets/Images/Side-Menu-Large.svg}" Width="190"></Image>
+					
+					<Button HorizontalAlignment="Stretch" Command="{Binding GoToMenuCommand}">
+						<StackPanel Orientation="Horizontal">
+							<Label Classes="icon" Content="&#xe9a2;"></Label>
+							<Label Content="Menu" IsVisible="{Binding SideMenuExpanded}"></Label>
+						</StackPanel> 
+					</Button>
+
+					<Button HorizontalAlignment="Stretch" 
+                            Command="{Binding OpenCreaturesCommand}"
+                            CommandParameter="{Binding RelativeSource={RelativeSource AncestorType=Window}}">
+                        <StackPanel Orientation="Horizontal">
+                            <Label Classes="icon" Content="&#xea1f;"></Label> 
+                            <Label Content="Mapping" IsVisible="{Binding SideMenuExpanded}"></Label>
+                        </StackPanel>
+                    </Button>
+
+					<Button HorizontalAlignment="Stretch" Command="{Binding GoToCreatureCommand}">
+						<StackPanel Orientation="Horizontal">
+							<Label Classes="icon" Content="&#xe9a2;"></Label>
+							<Label Content="Creatures" IsVisible="{Binding SideMenuExpanded}"></Label>
+						</StackPanel> 
+					</Button>
+
+					<IconButton IconText="&#xe93a;" HorizontalAlignment="Stretch" Command="{Binding GoToLibraryCommand}">
+						<Label Content="Library" IsVisible="{Binding SideMenuExpanded}"></Label>
+					</IconButton>
+
+					<Button HorizontalAlignment="Stretch" Command="{Binding GoToTemplatesCommand}">
+						<StackPanel Orientation="Horizontal">
+							<Label Classes="icon" Content="&#xe9fe;"></Label>
+							<Label Content="Templates" IsVisible="{Binding SideMenuExpanded}"></Label>
+						</StackPanel>
+					</Button>
+					<Button HorizontalAlignment="Stretch" Command="{Binding GoToSkillChallengeCommand}">
+						<StackPanel Orientation="Horizontal">
+							<Label Classes="icon" Content="&#xea7c;"></Label>
+							<Label Content="Skill Challenges" IsVisible="{Binding SideMenuExpanded}"></Label>
+						</StackPanel>
+					</Button>
+					<Button HorizontalAlignment="Stretch" Command="{Binding GoToDiseasesCommand}">
+						<StackPanel Orientation="Horizontal">
+							<Label Classes="icon" Content="&#xea3d;"></Label>
+							<Label Content="Diseases" IsVisible="{Binding SideMenuExpanded}"></Label>
+						</StackPanel>
+					</Button>
+					<Button HorizontalAlignment="Stretch" Command="{Binding GoToMagicItemsCommand}">
+						<StackPanel Orientation="Horizontal">
+							<Label Classes="icon" Content="&#xe9b6;"></Label>
+							<Label Content="Magic Items" IsVisible="{Binding SideMenuExpanded}"></Label>
+						</StackPanel>
+					</Button>
+					<Button HorizontalAlignment="Stretch" Command="{Binding GoToArtifactsCommand}">
+						<StackPanel Orientation="Horizontal">
+							<Label Classes="icon" Content="&#xea2f;"></Label>
+							<Label Content="Artifacts" IsVisible="{Binding SideMenuExpanded}"></Label>
+						</StackPanel>
+					</Button>
+					<Button HorizontalAlignment="Stretch" Command="{Binding GoToRitualsCommand}">
+						<StackPanel Orientation="Horizontal">
+							<Label Classes="icon" Content="&#xe93a;"></Label>
+							<Label Content="Rituals" IsVisible="{Binding SideMenuExpanded}"></Label>
+						</StackPanel>
+					</Button>
+					<Button HorizontalAlignment="Stretch" Command="{Binding GoToTrapsCommand}">
+						<StackPanel Orientation="Horizontal">
+							<Label Classes="icon" Content="&#xe929;"></Label>
+							<Label Content="Traps/Hazards" IsVisible="{Binding SideMenuExpanded}"></Label>
+						</StackPanel>
+					</Button>
+					<Button HorizontalAlignment="Stretch" Command="{Binding GoToTerrainCommand}">
+						<StackPanel Orientation="Horizontal">
+							<Label Classes="icon" Content="&#xe9e9;"></Label>
+							<Label Content="Terrain Powers" IsVisible="{Binding SideMenuExpanded}"></Label>
+						</StackPanel>
+					</Button>
+					<Button HorizontalAlignment="Stretch" Command="{Binding GoToTilesCommand}">
+						<StackPanel Orientation="Horizontal">
+							<Label Classes="icon" Content="&#xe972;"></Label>
+							<Label Content="Map Tiles" IsVisible="{Binding SideMenuExpanded}"></Label>
+						</StackPanel>
+					</Button>
+						<Button HorizontalAlignment="Stretch" Command="{Binding GoToLibraryCommand}">
+						<StackPanel Orientation="Horizontal">
+							<Label Classes="icon" Content="&#xe93a;"></Label>
+							<Label Content="Library" IsVisible="{Binding SideMenuExpanded}"></Label>
+						</StackPanel>
+					</Button>
+				</StackPanel>
+
+				<Button Classes="transparent" Grid.Row="1" Command="{Binding GoToSettingsCommand}">
+					<Label Classes="iconOnly" Content="&#xea7f;"></Label>
+				</Button>
+
+			</Grid>
+		</Border>
+
+
+	</Grid>
+
+</Window>

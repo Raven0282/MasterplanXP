@@ -1,0 +1,17 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:vm="using:MasterplanXP.ViewModels"
+        x:Class="MasterplanXP.Views.HostWindow"
+        Icon="/Assets/Images/logo3-small-icon.ico"
+        Title="HostWindow - Test"
+        x:DataType="vm:HostWindowViewModel">
+    
+    <StackPanel Margin="20" Spacing="15">
+        <TextBlock Text="Host Window" FontSize="20" />
+        <TextBlock Foreground="DarkGoldenrod"   Text="{Binding ModalResult}" FontWeight="Bold" />
+        
+        <Button Content="Open Modal Dialog" 
+                Command="{Binding OpenCustomDialogCommand}" 
+                CommandParameter="{Binding RelativeSource={RelativeSource AncestorType=Window}}" />
+    </StackPanel>
+</Window>

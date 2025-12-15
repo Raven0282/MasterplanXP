@@ -1,0 +1,16 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:vm="using:MasterplanXP.ViewModels"
+             x:Class="MasterplanXP.Views.ExampleModalContentView"
+             x:DataType="vm:ExampleModalContentViewModel">
+    
+    <StackPanel Spacing="10" Margin="20">
+        <TextBlock Text="Enter data for the host window:" />
+        <TextBox Text="{Binding UserInput, Mode=TwoWay}" />
+        
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Spacing="10">
+            <Button Content="OK" Command="{Binding OkCommand}" />
+            <Button Content="Cancel" Command="{Binding CancelCommand}" />
+        </StackPanel>
+    </StackPanel>
+</UserControl>

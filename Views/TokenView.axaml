@@ -1,0 +1,36 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:vm="using:MasterplanXP.ViewModels"
+             xmlns:c="using:MasterplanXP.Converters"
+             x:Class="MasterplanXP.Views.TokenView"
+             x:DataType="vm:TokenViewModel"
+             
+             Canvas.Left="{Binding ScreenX}"
+             Canvas.Top="{Binding ScreenY}">
+
+    <UserControl.Resources>
+        <c:ScaleToGridSizeConverter x:Key="ScaleToGridSizeConverter" />
+    </UserControl.Resources>
+    
+    <Grid Width="{Binding ScaleFactor, 
+                        Converter={StaticResource ScaleToGridSizeConverter}, 
+                        ConverterParameter={Binding GridCellSize}}"
+          Height="{Binding ScaleFactor, 
+                        Converter={StaticResource ScaleToGridSizeConverter}, 
+                        ConverterParameter={Binding GridCellSize}}">
+          
+        <Image Source="{Binding ImagePath}" 
+               Stretch="UniformToFill" 
+               Classes="TokenImage"
+               Margin="2">
+            
+            <ToolTip.Tip>
+                <StackPanel>
+                    <TextBlock Text="{Binding TokenName}" FontWeight="Bold"/>
+                    <TextBlock Text="{Binding TokenDetails}" TextWrapping="Wrap" MaxWidth="150"/>
+                </StackPanel>
+            </ToolTip.Tip>
+        </Image>
+        
+        </Grid>
+</UserControl>

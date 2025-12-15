@@ -1,0 +1,49 @@
+<Application xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             x:Class="MasterplanXP.App"
+             xmlns:local="using:MasterplanXP"
+			 RequestedThemeVariant="Default">
+             <!-- "Default" ThemeVariant follows system theme variant. "Dark" or "Light" are other available options. -->
+
+    <Application.DataTemplates>
+        <local:ViewLocator/>
+    </Application.DataTemplates>
+
+	<Application.Styles>
+		<FluentTheme />
+		<StyleInclude Source="Styles/AppDefaultStyles.axaml"></StyleInclude>
+	</Application.Styles>
+
+	<Application.Resources>
+
+		<!-- IGNORE the apparent error in this line.  It only appears in Visual Studio.
+		The syntax for ResourceDictionary and MergeResourceInclude
+		is correct and the solution will still compile. Use MergeResourceInclude
+		instead of ResourceInclude to get a compile time performance benefit.
+		MC3022 :All objects added to an IDictionary must have an x:Key associated with them. -->
+		<ResourceDictionary>
+			<ResourceDictionary.MergedDictionaries>
+				<MergeResourceInclude Source="/Controls/IconButton.axaml"></MergeResourceInclude>
+			</ResourceDictionary.MergedDictionaries>
+		</ResourceDictionary>
+
+        <SolidColorBrush x:Key="PrimaryForeground">#CFCFCF</SolidColorBrush>   
+		<SolidColorBrush x:Key="PrimaryBackground">#14172D</SolidColorBrush>
+		<LinearGradientBrush x:Key="PrimaryBackgroundGradient" StartPoint="0%, 0%" EndPoint="100%,0%">
+			<GradientStop Offset="0" Color="#111214"></GradientStop>
+			<GradientStop Offset="1" Color="#151E3E"></GradientStop>
+		</LinearGradientBrush>
+
+		<SolidColorBrush x:Key="MainMenuHoverBackColor">#333B5A</SolidColorBrush>
+		<SolidColorBrush x:Key="MainMenuHeaderHoverForeColor">WhiteSmoke</SolidColorBrush>
+
+		<SolidColorBrush x:Key="PrimaryHoverBackground">#333B5A</SolidColorBrush>
+		<SolidColorBrush x:Key="PrimaryHoverForeground">WhiteSmoke</SolidColorBrush>
+
+		<FontFamily x:Key="Phosphor">/Assets/Fonts/Phosphor.ttf#Phosphor</FontFamily>
+		<FontFamily x:Key="PhosphorFill">/Assets/Fonts/Phosphor-Fill.ttf#Phosphor-Fill</FontFamily>
+		<FontFamily x:Key="RpgAwe">/Assets/Fonts/rpgawesome-webfont.ttf#rpg-awesome</FontFamily>
+		<FontFamily x:Key="DefaultFontFamily">/Assets/Fonts/NotoSansJP.ttf</FontFamily>
+		
+	</Application.Resources>
+</Application>

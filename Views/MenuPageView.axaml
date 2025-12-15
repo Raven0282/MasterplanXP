@@ -1,0 +1,93 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="600"
+             xmlns:vm="using:MasterplanXP.ViewModels"
+			 xmlns:view="using:MasterplanXP.Views"
+			 x:Class="MasterplanXP.Views.MenuPageView"
+             x:DataType="vm:MenuPageViewModel"> 
+			             
+
+
+    	<!-- This only sets the DataContext for the previewer in an IDE, to set the actual DataContext
+              for runtime, set the DataContext property in code (look at App.axaml.cs) -->
+    <Design.DataContext><vm:MenuPageViewModel/></Design.DataContext>
+
+    <StackPanel>
+    <Grid ColumnDefinitions="*, Auto" RowDefinitions="Auto, *, Auto">
+        <DockPanel Grid.Row="0" VerticalAlignment="Center" Margin="0, 0, 0, 0" Height="30">
+            <Menu FontSize="16" Foreground="White" FontWeight="SemiBold" DockPanel.Dock="Top" VerticalAlignment="Center">
+            <MenuItem Header="_File">
+                <MenuItem Header="_New Project"/>
+                 <Separator/>
+                <MenuItem Header="_Open Project"/>
+                 <Separator/>
+                <MenuItem Header="_Save Project"/>
+                <MenuItem Header="_Save Project As"/>
+                 <Separator/>
+                <MenuItem Header="_Advanced      >"/>
+                 <Separator/>
+                <MenuItem Header="_Modules">
+                    <MenuItem Header="_Mapping (Modal)" 
+                          Command="{Binding OpenMapModuleCommand}"
+                          CommandParameter="{Binding $parent[Window]}"/>
+                    <MenuItem Header="_Mapping (Non-Modal)" 
+                      Command="{Binding OpenMapWindowCommand}" /> 
+            <Separator />
+        </MenuItem>
+                <MenuItem Header="_Exit"/>
+            </MenuItem>
+
+            <MenuItem Header="_Project">
+                <MenuItem Header="Project Properties"/>
+                <MenuItem Header="Project Overview"/>                
+                <MenuItem Header="Project Checklist"/>
+                <MenuItem Header="Project Campaign Settings"/>
+                 <Separator/>
+                <MenuItem Header="Password Protection"/>
+                 <Separator/>
+                <MenuItem Header="Tactical Maps"/>
+                <MenuItem Header="Regional Maps"/>
+                 <Separator/>
+                <MenuItem Header="Player Characters"/>
+                <MenuItem Header="Treasure Parcels"/>
+                <MenuItem Header="Encounter Decks"/>
+                <MenuItem Header="Custom Creatures and NPCs"/>
+                <MenuItem Header="Calendars"/>
+                <MenuItem Header="Treasure Parcels"/>
+                <MenuItem Header="Paused Encounters"/>
+            </MenuItem>       
+            <MenuItem Header="_Player View">
+                <MenuItem Header="_Show"/> 
+                <MenuItem Header="_Clear"/>
+            </MenuItem>
+            <MenuItem Header="_Tools">
+                <MenuItem Header="Import Project..."/>
+                 <Separator/>
+                <MenuItem Header="Export Project..."/>
+                <MenuItem Header="Export Handout..."/>
+                 <Separator/>
+                <MenuItem Header="Plot Design Issues"/>
+                 <Separator/>
+                <MenuItem Header="Library"/>
+                 <Separator/>
+                <MenuItem Header="Add-Ins"/>
+                 <Separator/>
+                <MenuItem Header="Preferences"/>
+            </MenuItem>
+                <MenuItem Header="_Help">
+                    <MenuItem Header="Manual"/>
+                     <Separator/>
+                    <MenuItem Header="About"/>
+                </MenuItem>
+            </Menu>
+            <TextBlock/>
+        </DockPanel>
+    <Image Grid.Row="1" Source="{SvgImage /Assets/Images/logo-menu.svg}"></Image>
+
+    </Grid>
+</StackPanel>
+
+
+</UserControl>

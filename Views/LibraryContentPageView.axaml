@@ -1,0 +1,28 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             xmlns:vm="using:MasterplanXP.ViewModels"
+			 xmlns:view="using:MasterplanXP.Views"
+			 x:Class="MasterplanXP.Views.LibraryContentPageView">
+	
+	Welcome to the Library Content Page!
+	
+	<!--
+	Copy this file, rename it to your new page and make these changes after renaming
+	
+	On this file change:
+	(1)Page name on - x:Class="MasterplanXP.Views.RenameHerePageView"
+	
+	On the code behind page
+	(1)Page name on - public partial class RenameHerePageView : UserControl
+	(2)Page name on - public RenameHerePageView()
+	
+	Make sure the names of your pages match identically from the axaml page to the .cs page
+	
+	Delete all these comments from your final page
+	
+	-->
+	
+</UserControl>

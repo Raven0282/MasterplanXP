@@ -1,0 +1,34 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             Foreground="Goldenrod"
+			 xmlns:vm="using:MasterplanXP.ViewModels"
+			 x:DataType="vm:HomePageViewModel"
+			 xmlns:view="using:MasterplanXP.Views"
+			 x:Class="MasterplanXP.Views.HomePageView">
+
+	
+	<Grid Background="{DynamicResource ResourceKey=PrimaryBackground}">
+		<StackPanel TextElement.Foreground="Goldenrod" HorizontalAlignment="Center" VerticalAlignment="Center" Width="600">
+			<Image Source="{SvgImage /Assets/Images/logo-menu.svg}"></Image>	
+			<TextBlock FontSize="30" FontWeight="DemiBold" TextAlignment="Center" TextWrapping="Wrap">
+				<Label TextElement.Foreground="Goldenrod" FontSize="30" FontWeight="DemiBold" Content="{Binding Test}"></Label>
+			</TextBlock>
+					
+		</StackPanel>
+		
+		
+		
+		
+
+		
+	</Grid>
+	
+
+	
+
+	
+	
+</UserControl>

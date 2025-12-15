@@ -1,0 +1,95 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="600"
+             xmlns:vm="using:MasterplanXP.ViewModels"
+			 xmlns:view="using:MasterplanXP.Views"
+			 Background="{DynamicResource PrimaryBackground}"
+			 Foreground="{DynamicResource PrimaryForeground}"
+			 x:DataType="vm:LibraryPageViewModel"
+			 x:Class="MasterplanXP.Views.LibraryPageView">
+	
+	<Design.DataContext><vm:LibraryPageViewModel></vm:LibraryPageViewModel></Design.DataContext>
+
+
+	<Grid ShowGridLines="True" Grid.ColumnDefinitions="*, *" Grid.RowDefinitions="Auto, *">
+		<Grid ShowGridLines="True" Grid.Row="0" Grid.Column="0" Name="HeaderGrid" Grid.ColumnSpan="2">
+		<Image Source="{SvgImage /Assets/Images/Headerbar-Transparent.svg}" Height="150" Stretch="UniformToFill" />
+		<StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+				<Label Classes="header" HorizontalAlignment="Center" FontWeight="DemiBold" FontSize="25" Foreground="GoldenRod" Content="{Binding Test}"></Label>				
+				<Label Classes="sub1" HorizontalAlignment="Center" Content="Version 13.0.2.0 Beta"></Label>
+				<Label Classes="sub2" HorizontalAlignment="Center" Content="Compiled Nov 29 2025"></Label>
+		</StackPanel>
+		</Grid>
+
+
+<!-- Left Side Content -->
+<StackPanel Grid.Column="0" Grid.Row="1" Spacing="15" Margin="15">
+	<!-- General Library -->
+	<StackPanel>
+		<Label Content="Library"></Label>
+		<Grid ShowGridLines="True" ColumnDefinitions="*, *" RowDefinitions="Auto, Auto, Auto">
+			<TextBlock Grid.Row="0" Grid.Column="0" TextWrapping="Wrap" Text="The Library is a collection of sourcebooks which contain 
+			various resources to design your adventures. The sourcebooks may contain, Creatures, Magic Items, etc. and any of these items 
+			can be placed in your adventure. Load new sourcebooks, create your own and edit existing resources from this page.">
+			</TextBlock>
+		
+		<Button Grid.Row="0" Grid.Column="1" HorizontalAlignment="Stretch">
+			<StackPanel Orientation="Horizontal">
+				<Label Classes="icon" Content="&#xE95A;"></Label>
+				<Label Content="Load Sourcebook"></Label>
+			</StackPanel>
+		</Button>
+
+			<TextBlock TextWrapping="Wrap" Grid.Column="0" Grid.Row="1" Text="more text"></TextBlock>
+			<CheckBox Grid.Column="1" Grid.Row="1" Foreground="white">checkbox</CheckBox>
+
+			<TextBlock TextWrapping="Wrap" Grid.Column="0" Grid.Row="2" Text="even more text"></TextBlock>
+			<CheckBox Grid.Column="1" Grid.Row="2"></CheckBox>
+
+		</Grid>
+	</StackPanel>
+
+	<!-- Library List Section -->
+	<StackPanel>
+		<Label Content="Library List"></Label>
+		<Grid ShowGridLines="True"  ColumnDefinitions="*, Auto">
+			<TextBlock Grid.Column="0" TextWrapping="Wrap" Text="Libraries are in this list + more text that should be used.  Don't skimp on spaces and lorem ipsum, etc."></TextBlock>			
+			<Button Grid.Row="0" Grid.Column="1" HorizontalAlignment="Stretch">
+				<StackPanel Orientation="Horizontal">
+					<Label Classes="icon" Content="&#xE95A;"></Label>
+					<Label Content="+ New"></Label>
+				</StackPanel>
+			</Button>
+		</Grid>	
+	<ListBox BorderThickness="5" Background="red" Margin="0" ItemsSource="{Binding LibraryNames}">		
+	</ListBox>
+	</StackPanel>
+
+
+	
+</StackPanel>
+
+
+
+
+
+</Grid>
+		
+
+
+	<!-- Right Side Content -->
+
+	
+		
+
+
+
+
+
+	<!-- Welcome to the Library Page!-->
+	
+	
+	
+</UserControl>

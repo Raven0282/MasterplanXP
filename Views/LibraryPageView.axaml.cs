@@ -1,0 +1,19 @@
+using Avalonia;
+using Avalonia.Controls;
+using Avalonia.Markup.Xaml;
+
+namespace MasterplanXP.Views;
+
+public partial class LibraryPageView : UserControl
+{
+    public LibraryPageView()
+    {
+        InitializeComponent();
+    }
+
+    private void InitializeComponent()
+    {
+        AvaloniaXamlLoader.Load(this);
+    }
+    
+}

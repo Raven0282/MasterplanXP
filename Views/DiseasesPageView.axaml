@@ -1,0 +1,30 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d" d:DesignWidth="1100" d:DesignHeight="600"
+             xmlns:vm="using:MasterplanXP.ViewModels"
+			 xmlns:view="using:MasterplanXP.Views"
+			 x:DataType="vm:DiseasesPageViewModel"
+			 x:Class="MasterplanXP.Views.DiseasesPageView">
+
+	
+	<Design.DataContext><vm:DiseasesPageViewModel></vm:DiseasesPageViewModel></Design.DataContext>
+		
+	<Grid ColumnDefinitions="*,*" RowDefinitions="Auto,*">
+			<Grid Grid.Row="0" Grid.Column="0" Name="HeaderGrid" Grid.ColumnSpan="2">
+			<Image Source="{SvgImage /Assets/Images/Headerbar-Transparent.svg}" Stretch="UniformToFill" />
+			<StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+				<Label Classes="header" HorizontalAlignment="Center" FontWeight="DemiBold" FontSize="25" Foreground="GoldenRod" Content="{Binding Test}"></Label>				
+				<Label Classes="sub1" HorizontalAlignment="Center" Content="Version 13.0.2.0 Beta"></Label>
+				<Label Classes="sub2" HorizontalAlignment="Center" Content="Compiled Nov 29 2025"></Label>
+			</StackPanel>
+			</Grid>
+		</Grid>
+
+	
+	<!-- Welcome to the Diseases Page! -->
+	
+
+	
+</UserControl>

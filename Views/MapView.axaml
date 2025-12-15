@@ -1,0 +1,61 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:vm="using:MasterplanXP.ViewModels"
+             xmlns:controls="using:MasterplanXP.Controls"
+             xmlns:local="using:MasterplanXP.Views"
+             mc:Ignorable="d" d:DesignWidth="1000" d:DesignHeight="800"
+             x:Class="MasterplanXP.Views.MapView"
+             x:DataType="vm:MapViewModel">
+    
+    <Design.DataContext>
+        <vm:MapViewModel/>
+    </Design.DataContext>
+
+    <Grid Background="Black">
+        
+        <Image Source="{Binding MapImagePath}" 
+               Stretch="UniformToFill" 
+               HorizontalAlignment="Center" 
+               VerticalAlignment="Center">
+            
+            </Image>
+        
+        <Canvas x:Name="MapCanvas" ClipToBounds="True">
+            
+            <ItemsControl ItemsSource="{Binding Zones}">
+                <ItemsControl.ItemsPanel>
+                    <ItemsPanelTemplate>
+                        <Panel />
+                    </ItemsPanelTemplate>
+                </ItemsControl.ItemsPanel>
+                
+                <ItemsControl.ItemTemplate>
+                    <DataTemplate DataType="vm:ZoneViewModel">
+                        <local:ZoneView />
+                    </DataTemplate>
+                </ItemsControl.ItemTemplate>
+            </ItemsControl>
+            
+            <ItemsControl ItemsSource="{Binding Tokens}">
+                <ItemsControl.ItemsPanel>
+                    <ItemsPanelTemplate>
+                        <Panel />
+                    </ItemsPanelTemplate>
+                </ItemsControl.ItemsPanel>
+                
+                <ItemsControl.ItemTemplate>
+                    <DataTemplate DataType="vm:TokenViewModel">
+                        <local:TokenView />
+                    </DataTemplate>
+                </ItemsControl.ItemTemplate>
+            </ItemsControl>
+        </Canvas>
+        
+        <controls:GridOverlayControl IsVisible="{Binding IsGridVisible}"
+                                     MapViewModel="{Binding .}" 
+                                     PointerPressed="GridOverlayControl_PointerPressed"/>
+        
+    </Grid>
+</UserControl>
